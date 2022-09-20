@@ -1,0 +1,39 @@
+@import '../../styles/bootstrap';
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  color: $body-color;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  z-index: 1;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+  @include transition($btn-transition);
+
+  &:hover {
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  @each $color, $value in $theme-colors {
+    &_#{$color} {
+      @include button-variant($value, $value);
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    &_outline_#{$color} {
+      @include button-outline-variant($value);
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

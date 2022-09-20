@@ -1,0 +1,13 @@
+@import '../../styles/bootstrap';
+
+.spin {
+  animation: spin 1s linear infinite;
+  color: $primary;
+  padding-top: 1px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

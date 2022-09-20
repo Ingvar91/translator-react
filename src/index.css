@@ -1,3 +1,7 @@
+*, :after, :before {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#overlay_container {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+
+.overlay_connected {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
 }
